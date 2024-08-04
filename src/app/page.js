@@ -55,10 +55,10 @@ const buttonStyle = {
   width: '150px',
   left: '50%',
   transform: 'translateX(-50%)',
-  bgcolor: '#db5b4f', // Initial button color
+  bgcolor: '#4caf50', // Initial button color
   color: 'white', // Text color
   '&:hover': {
-    bgcolor: '#a8463d', // Hover color
+    bgcolor: '#388e3c', // Hover color
   },
 };
 
@@ -220,13 +220,22 @@ export default function Home() {
                   <Typography variant={'body1'} color={'white'}>
                     Quantity: {quantity}
                   </Typography>
-                  <Button
-                    variant="contained"
-                    onClick={() => removeItem(name)}
-                    sx={{ marginTop: 1, bgcolor: '#db5b4f', '&:hover': { bgcolor: '#a8463d' }, color: 'white' }}
-                  >
-                    Remove
-                  </Button>
+                  <Stack direction="row" justifyContent="center" spacing={1} sx={{ marginTop: 1 }}>
+                    <Button
+                      variant="contained"
+                      onClick={() => addItem(name)}
+                      sx={{ bgcolor: '#4caf50', '&:hover': { bgcolor: '#388e3c' }, color: 'white' }}
+                    >
+                      Add
+                    </Button>
+                    <Button
+                      variant="contained"
+                      onClick={() => removeItem(name)}
+                      sx={{ bgcolor: '#db5b4f', '&:hover': { bgcolor: '#a8463d' }, color: 'white' }}
+                    >
+                      Remove
+                    </Button>
+                  </Stack>
                 </Box>
               ))}
             </Box>
